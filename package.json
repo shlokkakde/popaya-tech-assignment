@@ -1,0 +1,26 @@
+{
+  "name": "popaya-notes-assignment",
+  "version": "1.0.0",
+  "description": "Full-stack notes management assignment with a fixed core debugging task.",
+  "main": "backend/notes-api/src/server.js",
+  "scripts": {
+    "start": "node backend/notes-api/src/server.js",
+    "dev": "node backend/notes-api/src/server.js",
+    "vercel-build": "node scripts/sync-public.js",
+    "test": "node --test backend/notes-api/tests/*.test.js",
+    "core": "node core/buggy-code/debugging-assignment.js"
+  },
+  "keywords": [
+    "notes",
+    "express",
+    "assignment"
+  ],
+  "author": "Shlok Kakade",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
