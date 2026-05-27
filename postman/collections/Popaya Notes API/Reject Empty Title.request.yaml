@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{baseUrl}}/api/notes"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "   ",
+      "content": "This should fail validation."
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('empty title is rejected', function () {
+        pm.response.to.have.status(400);
+        pm.expect(pm.response.json().error).to.eql('Title must not be empty');
+      });
+    language: text/javascript
+order: 7000

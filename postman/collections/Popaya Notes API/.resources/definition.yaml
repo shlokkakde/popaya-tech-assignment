@@ -1,0 +1,6 @@
+$kind: collection
+name: Popaya Notes API
+description: Postman collection for verifying the Popaya Notes Management System API locally or after Vercel deployment. Change the collection variable baseUrl to your deployed Vercel URL.
+variables:
+  baseUrl: http://localhost:5000
+  noteId: ""

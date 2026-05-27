@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{baseUrl}}/api/notes"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Postman verification note",
+      "content": "Created from Postman to verify the deployed API."
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('note is created', function () {
+        pm.response.to.have.status(201);
+        const body = pm.response.json();
+        pm.expect(body.data).to.have.property('id');
+        pm.collectionVariables.set('noteId', body.data.id);
+      });
+    language: text/javascript
+order: 2000

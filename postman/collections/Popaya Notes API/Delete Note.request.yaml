@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseUrl}}/api/notes/{{noteId}}"
+method: DELETE
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('note is deleted', function () {
+        pm.response.to.have.status(200);
+        pm.expect(pm.response.json().message).to.eql('Note deleted');
+      });
+    language: text/javascript
+order: 8000

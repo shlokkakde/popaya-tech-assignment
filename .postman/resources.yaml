@@ -1,0 +1,15 @@
+# Use this workspace to collaborate
+workspace:
+  id: 463a2655-2ff1-4e27-84a8-d032389d7939
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ..\postman\collections\Popaya Notes API: f3084d10-d106-42ff-bc3c-e41b4380a620
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/
